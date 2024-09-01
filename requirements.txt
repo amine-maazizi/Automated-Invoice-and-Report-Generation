@@ -1,0 +1,10 @@
+Flask==2.3.2            # Web framework for the user interface
+Pandas==1.5.3           # Data extraction and processing
+openpyxl==3.1.2         # Excel file handling
+Jinja2==3.1.2           # Templating engine for HTML documents
+FPDF==1.7.2             # PDF generation from HTML templates
+sendgrid                # SendGrid API for email sending (alternative to smtplib)
+schedule==1.1.0         # Job scheduling for automation tasks
+pytest==7.3.1           # Testing framework
+pdfkit
+flask-cors

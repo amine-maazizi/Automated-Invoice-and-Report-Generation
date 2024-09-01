@@ -1,0 +1,82 @@
+<div class="settings">
+    <h2>Settings</h2>
+
+    <!-- Section 1: Destination Folders -->
+    <div class="settings-section compact settings-page" id="settings-page-1">
+        <h3>Destination Folders</h3>
+        <div class="settings-row">
+            <label for="invoices-folder">Invoices Folder:</label>
+            <input type="text" id="invoices-folder">
+            <button id="invoices-folder-btn" class="btn small-btn">Browse</button>
+        </div>
+
+        <div class="settings-row">
+            <label for="reports-folder">Reports Folder:</label>
+            <input type="text" id="reports-folder">
+            <button id="reports-folder-btn" class="btn small-btn">Browse</button>
+        </div>
+    </div>
+
+    <!-- Section 2: Email Settings -->
+    <div class="settings-section compact settings-page" id="settings-page-2" style="display: none;">
+        <h3>Email Settings</h3>
+        <div class="settings-row">
+            <label for="email-server">SMTP Server:</label>
+            <input type="text" id="email-server">
+        </div>
+        <div class="settings-row">
+            <label for="email-user">User Email:</label>
+            <input type="email" id="email-user">
+        </div>
+        <div class="settings-row">
+            <label for="email-password">Password:</label>
+            <input type="password" id="email-password">
+        </div>
+    </div>
+
+    <!-- Section 5: Manager Emails Settings -->
+    <div class="settings-section compact settings-page" id="settings-page-3" style="display: none;">
+        <h3>Manager Emails</h3>
+        <div class="settings-row">
+            <label for="manager-email">Manager Email:</label>
+            <input type="email" id="manager-email">
+            <button id="add-manager-email-btn" class="btn small-btn">Add</button>
+        </div>
+        <ul id="manager-emails-list" class="emails-list"></ul>
+
+        <div class="settings-row">
+            <label for="email-file-input">Load from .txt file:</label>
+            <button id="load-email-file-btn" class="btn small-btn">Load File</button>
+        </div>
+    </div>
+
+    <!-- Section 3: Scheduling Settings -->
+    <div class="settings-section compact settings-page" id="settings-page-4" style="display: none;">
+        <h3>Scheduling Settings</h3>
+        <div class="settings-row">
+            <label for="schedule-time">Schedule Time:</label>
+            <input type="time" id="schedule-time">
+        </div>
+    </div>
+
+    <!-- Section 4: Data Import Settings -->
+    <div class="settings-section compact settings-page" id="settings-page-5" style="display: none;">
+        <h3>Data Import Settings</h3>
+        <div class="settings-row">
+            <label for="file-input">Select Excel File:</label>
+            <button id="load-data-btn" class="btn small-btn">Load Data</button>
+            <button id="clear-data-btn" class="btn small-btn">Clear Data</button>
+        </div>
+    </div>
+
+    <!-- Pagination for settings sections -->
+    <div class="pagination">
+        <button class="page-btn" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" data-page="4">4</button>
+        <button class="page-btn" data-page="5">5</button>
+    </div>
+
+    <button id="save-settings-btn" class="btn">Save Settings</button>
+</div>

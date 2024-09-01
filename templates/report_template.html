@@ -1,0 +1,43 @@
+{% extends "base_template.html" %}
+
+{% block title %}Sales Report{% endblock %}
+
+{% block content %}
+<h2>Sales Report</h2>
+<p><strong>Report Period:</strong> {{ report_period }}</p>
+
+<h3>Summary</h3>
+<p><strong>Total Sales:</strong> ${{ total_sales }}</p>
+<p><strong>Outstanding Invoices:</strong> ${{ outstanding_invoices }}</p>
+<p><strong>Top Clients:</strong></p>
+<ul>
+    {% for client in top_clients %}
+    <li>{{ client.name }} - ${{ client.total_purchase }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Detailed Report</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Client Name</th>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.client_name }}</td>
+            <td>{{ order.order_id }}</td>
+            <td>{{ order.order_date }}</td>
+            <td>${{ order.amount }}</td>
+            <td>{{ order.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

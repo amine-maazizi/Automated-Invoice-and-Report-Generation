@@ -1,0 +1,70 @@
+{
+  "name": "automated-invoice-report-generator",
+  "version": "1.0.0",
+  "description": "A desktop application for generating invoices and reports with a simple expanding and collapsing navbar UI.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "electron",
+    "desktop",
+    "invoice",
+    "report",
+    "automation",
+    "navbar"
+  ],
+  "author": "Amine Maazizi",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.yourcompany.automatedinvoicereport",
+    "productName": "Automated Invoice Report Generator",
+    "files": [
+      "app/**/*",
+      "src/**/*",
+      "templates/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "src",
+        "to": "src",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "templates",
+        "to": "templates",
+        "filter": ["**/*"]
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "app/assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Automated Invoice Report Generator"
+    },
+    "extraMetadata": {
+      "main": "app/main.js"
+    }
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "path": "^0.12.7",
+    "child_process": "^1.0.2"
+  }
+}

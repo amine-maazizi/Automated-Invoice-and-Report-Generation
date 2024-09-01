@@ -1,0 +1,8 @@
+data/input/*
+data/output/invoices/*
+data/output/reports/*
+app/node_modules/*
+dist/
+build/
+app.spec
+main.py

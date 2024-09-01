@@ -1,0 +1,54 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [31/Aug/2024 23:28:32] "POST /upload-excel HTTP/1.1" 200 -
+DEBUG:root:Received settings: {'invoicesFolder': 'D:\\Portfolio\\Automated Invoice and Report Generation System\\data\\output\\invoices', 'reportsFolder': 'D:\\Portfolio\\Automated Invoice and Report Generation System\\data\\output\\reports', 'emailServer': 'smtp.gmail.com', 'emailUser': 'Aminema1000@gmail.com', 'emailPassword': 'ejot naof qseq oqaj', 'scheduleTime': '23:32', 'filePath': 'D:\\Portfolio\\Automated Invoice and Report Generation System\\data\\input\\public_works_invoice_data.xlsx'}
+DEBUG:root:Validation results: {'Clients': {'errors': [], 'warnings': [], 'clean_data':    Client ID          Client Name  ...         Phone                    Address
+0        101  XYZ Construction Co  ...  123-456-7890      1234 Elm St, City, ST
+1        102         ABC Builders  ...  234-567-8901     5678 Oak Ave, City, ST
+2        103      LMN Contractors  ...  345-678-9012     9101 Pine Rd, City, ST
+3        104      DEF Development  ...  456-789-0123    2345 Maple St, City, ST
+4        105            GHI Group  ...  567-890-1234   6789 Birch Ave, City, ST
+5        106      JKL Engineering  ...  678-901-2345    3456 Cedar Ln, City, ST
+6        107   MNO Infrastructure  ...  789-012-3456   7890 Walnut Rd, City, ST
+7        108     PQR Urban Design  ...  890-123-4567   4567 Spruce St, City, ST
+8        109        STU Roadworks  ...  901-234-5678      8901 Fir St, City, ST
+9        110      VWX Landscapers  ...  012-345-6789  5670 Redwood Dr, City, ST
+
+[10 rows x 6 columns]}, 'Products': {'errors': [], 'warnings': [], 'clean_data':   Product ID Product Name  ...  Stock Quantity                          Description
+0       P001      Asphalt  ...             500      High-quality asphalt for paving
+1       P002     Concrete  ...             300  Ready-mix concrete for construction
+2       P003       Gravel  ...            1000       Crushed gravel for foundations
+3       P004         Sand  ...             800           Fine sand for masonry work
+4       P005  Steel Beams  ...             100               Structural steel beams
+5       P006       Cement  ...             600         Portland cement for concrete
+6       P007       Bricks  ...             900             Clay bricks for building
+7       P008        Rebar  ...             400             Reinforcement steel bars
+8       P009  Wood Planks  ...             300              Lumber for construction
+9       P010   Insulation  ...             700          Thermal insulation material
+
+[10 rows x 5 columns]}, 'Orders': {'errors': [], 'warnings': [], 'clean_data':   Order ID  Client ID Order Date  ... Total Amount ($)  Delivery Date     Status
+0     O001        101 2024-08-01  ...             5000     2024-08-05  Delivered
+1     O002        102 2024-08-03  ...             4500     2024-08-08    Pending
+2     O003        103 2024-08-05  ...             5000     2024-08-10  Delivered
+3     O004        104 2024-08-07  ...             6000     2024-08-12    Pending
+4     O005        105 2024-08-09  ...             7500     2024-08-14  Delivered
+5     O006        106 2024-08-11  ...             8000     2024-08-16    Pending
+6     O007        107 2024-08-13  ...             4500     2024-08-18  Delivered
+7     O008        108 2024-08-15  ...             4800     2024-08-20    Pending
+8     O009        109 2024-08-17  ...            14400     2024-08-22  Delivered
+9     O010        110 2024-08-19  ...             1000     2024-08-24    Pending
+
+[10 rows x 8 columns]}, 'Invoices': {'errors': [], 'warnings': [], 'clean_data':   Invoice ID Order ID Invoice Date   Due Date  Amount Due ($) Paid Status
+0       I001     O001   2024-08-01 2024-08-15            5000        Paid
+1       I002     O002   2024-08-03 2024-08-17            4500      Unpaid
+2       I003     O003   2024-08-05 2024-08-19            5000        Paid
+3       I004     O004   2024-08-07 2024-08-21            6000      Unpaid
+4       I005     O005   2024-08-09 2024-08-23            7500        Paid
+5       I006     O006   2024-08-11 2024-08-25            8000      Unpaid
+6       I007     O007   2024-08-13 2024-08-27            4500        Paid
+7       I008     O008   2024-08-15 2024-08-29            4800      Unpaid
+8       I009     O009   2024-08-17 2024-08-31           14400        Paid
+9       I010     O010   2024-08-19 2024-09-02            1000      Unpaid}}
+ERROR:root:Error generating invoices: invoice_template.html
+INFO:werkzeug:127.0.0.1 - - [31/Aug/2024 23:28:35] "[35m[1mPOST /generate-invoices HTTP/1.1[0m" 500 -

@@ -1,0 +1,12 @@
+{
+  "invoicesFolder": "D:\\Portfolio\\Automated Invoice and Report Generation System\\data\\output\\invoices",
+  "reportsFolder": "D:\\Portfolio\\Automated Invoice and Report Generation System\\data\\output\\reports",
+  "emailServer": "smtp.gmail.com",
+  "emailUser": "Aminema1000@gmail.com",
+  "emailPassword": "ejot naof qseq oqaj",
+  "scheduleTime": "23:32",
+  "filePath": "D:\\Portfolio\\Automated Invoice and Report Generation System\\data\\input\\public_works_invoice_data.xlsx",
+  "managerEmails": [
+    "maazizi@mtpnet.gov.ma"
+  ]
+}

@@ -1,0 +1,41 @@
+{% extends "base_template.html" %}
+
+{% block title %}Invoice{% endblock %}
+
+{% block content %}
+<h2>Invoice</h2>
+<p><strong>Invoice ID:</strong> {{ invoice_id }}</p>
+<p><strong>Invoice Date:</strong> {{ invoice_date }}</p>
+<p><strong>Due Date:</strong> {{ due_date }}</p>
+
+<h3>Client Information</h3>
+<p><strong>Client Name:</strong> {{ client_name }}</p>
+<p><strong>Contact Person:</strong> {{ contact_person }}</p>
+<p><strong>Email:</strong> {{ client_email }}</p>
+<p><strong>Address:</strong> {{ client_address }}</p>
+
+<h3>Order Details</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in order_items %}
+        <tr>
+            <td>{{ item.product_name }}</td>
+            <td>${{ item.unit_price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.total_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Total Amount Due: ${{ total_amount_due }}</h3>
+
+{% endblock %}

@@ -1,0 +1,316 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #F4F4F9;
+    color: #333333;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 60px; /* Default width */
+    background-color: #2F4F4F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+    transition: width 0.3s ease;
+    position: fixed; /* Fixed position to avoid overlapping */
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.navbar.expanded {
+    width: 250px; /* Expanded width */
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.logo-expanded {
+    display: none;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.logo-retracted {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    display: none; /* Hidden by default, shown when expanded */
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px; /* Add vertical spacing */
+}
+
+.nav-item:hover {
+    background-color: #5F9EA0; /* Subtle highlight color */
+}
+
+.content {
+    flex-grow: 1; /* Allows the content to grow and fill the remaining space */
+    margin-left: 120px; /* Adjusted margin to match collapsed navbar */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition when navbar expands/collapses */
+}
+
+.navbar.expanded + .content {
+    margin-left: 310px; /* Adjust to expanded width */
+}
+
+/* White square sections styling */
+.dashboard, .data, .automation, .settings {
+    text-align: center;
+    padding-top: 20px;
+    background: #FFFFFF; /* White background for sections */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 20px;
+}
+
+/* Footer styling */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    width: auto; /* Set to auto to allow one-line content */
+    padding: 5px 20px; /* Reduce padding for a cleaner one-line look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    opacity: 0.6; /* Lower opacity by default */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.footer:hover {
+    opacity: 1; /* Full opacity on hover */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    gap: 10px; /* Space between items */
+    flex-wrap: nowrap; /* Ensure content stays on one line */
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-links a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+/* Settings pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.page-btn {
+    background-color: #5F9EA0;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.page-btn:hover {
+    background-color: #4C8A88;
+}
+
+/* Styling for settings rows and buttons */
+.settings-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.settings-row label {
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="time"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+.btn {
+    background-color: #5F9EA0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #4C8A88;
+}
+
+.small-btn {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Compact layout for settings */
+.compact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-section {
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+/* Styling for Data Table */
+.data-preview {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#data-table th {
+    background-color: #5F9EA0; /* Header background */
+    color: white;
+    font-weight: bold;
+}
+
+#data-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra stripes */
+}
+
+#data-table tr:hover {
+    background-color: #e1f5fe; /* Highlight on hover */
+}
+
+/* Manager Emails Styling */
+.emails-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    max-height: 150px; /* Set a max height and allow scrolling */
+    overflow-y: auto;
+    width: 100%; /* Full width to align with input */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for the list */
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.emails-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text and button */
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+    border-radius: 3px; /* Rounded corners */
+    background-color: #fff; /* White background for each item */
+    margin-bottom: 5px; /* Space between items */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.emails-list li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.emails-list li:hover {
+    background-color: #f0f8ff; /* Highlight on hover */
+}
+
+.emails-list button {
+    background-color: #ff6b6b; /* Red color for remove button */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.emails-list button:hover {
+    background-color: #e05656; /* Darker red on hover */
+}
